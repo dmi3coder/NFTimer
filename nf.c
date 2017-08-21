@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include "TimeHandler.h"
+#include <sqlite3.h>
 #define TARGET_TIME 1509994820
 #define SECONDS_PER_DAY 86400
 
@@ -46,5 +47,6 @@ void handleArg(char arg) {
 
 int main(int argc, char** argv) {
 	handleArgs(argc, argv);
+	printf("%s\n", sqlite3_libversion()); 
 	return 0;
 }
