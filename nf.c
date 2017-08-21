@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "TimeHandler.h"
 #include <sqlite3.h>
-#define TARGET_TIME 1509994820
+#define TARGET_TIME 1511115356
 #define SECONDS_PER_DAY 86400
 
 void printDefaultInfo(){
