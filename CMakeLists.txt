@@ -4,7 +4,7 @@ project(NFTimer)
 include_directories(/)
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(nf nf.c TimeHandler.c)
+add_executable(nf nf.c TimeHandler.c Database.c)
 
 include_directories(/usr/include)
 link_directories(/usr/lib)
