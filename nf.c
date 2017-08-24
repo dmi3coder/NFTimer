@@ -4,7 +4,7 @@
 #include "TimeHandler.h"
 #include "Database.h"
 
-#define TARGET_TIME 1511115356
+#define TARGET_TIME 1511373003
 #define SECONDS_PER_DAY 86400
 
 void printDefaultInfo(){
