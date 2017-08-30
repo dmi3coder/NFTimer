@@ -49,5 +49,6 @@ void handleArg(char arg) {
 int main(int argc, char** argv) {
     handleArgs(argc, argv);
     start();
+    setTime(TARGET_TIME);
     return 0;
 }

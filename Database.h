@@ -1,6 +1,6 @@
 #include <time.h>
-
+#include <stdbool.h>
 void start();
-void setTime(time_t time);
+bool setTime(time_t time);
 void removeTime(time_t time);
 

@@ -3,6 +3,8 @@ project(NFTimer)
 
 include_directories(/)
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_BUILD_TYPE Debug)
 
 add_executable(nf nf.c TimeHandler.c Database.c)
 
