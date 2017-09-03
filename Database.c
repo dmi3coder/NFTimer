@@ -57,9 +57,10 @@ bool setTime(time_t time){
     strcpy(sqlPrefix, "INSERT INTO nf_time VALUES(0,\"test\",");
     char execString[100];
     sprintf(execString," %s %ld);",sqlPrefix, time);
-    rc = sqlite3_exec(holder.db, execString, 0, 0, &(holder.error_msg));
+    char** error_msg;
+    rc = sqlite3_exec(holder.db, execString, 0, 0, error_msg);
     if( rc != SQLITE_OK){
-        printf("error: %s",holder.error_msg);
+        printf("error: %s",error_msg[0]);
 	return false;
     }
     return true;

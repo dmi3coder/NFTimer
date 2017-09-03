@@ -13,27 +13,38 @@ void printDefaultInfo(){
     printf("Seconds left: %ld\n", TARGET_TIME-time(NULL));
 }
 
-void handleArg(char arg);
+void handleArg(char arg, char* second_arg);
 
 void handleArgs(int argc, char** argv) {
     switch(argc){
         case 1:
             printDefaultInfo();
             break;
-        case 2:
+	case 2:
+	case 3:
             if(argv[1][0] == '-'){
-                handleArg(argv[1][1]);
+                handleArg(argv[1][1],argv[2]);
             }
-            break;
-            
+            break;       
         default:
             printf("NFTimer don't know how to handle this yet\n");
             
     }
 }
 
-void handleArg(char arg) {
+void handleArg(char arg, char* second_arg) {
     switch(arg){
+	case 'a':{
+		time_t targetTime;
+		if( second_arg != NULL ) {
+	            targetTime = strtol(second_arg, NULL, 10);
+		} else {
+		    targetTime = time(0);
+		}
+		targetTime += SECONDS_PER_DAY*90;
+	        setTime(targetTime);
+		 }
+	    break;
         case 'd':
             printf("Difference: %ld\n", TARGET_TIME-time(NULL));
             break;
@@ -47,8 +58,7 @@ void handleArg(char arg) {
 
 
 int main(int argc, char** argv) {
-    handleArgs(argc, argv);
     start();
-    setTime(TARGET_TIME);
+    handleArgs(argc, argv);
     return 0;
 }
